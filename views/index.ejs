@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Flower Table</title>
+		<meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; width=device-width;">
+		<link href='/mycss.css' rel='stylesheet' type="text/css" />
+
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+	</head>
+	<body style="background-color: #3e94ec;">
+		<div class="text-center">
+	<!-- Button HTML (to Trigger Modal) -->
+	<a href="#myModal" class="btn btn-default trigger-btn" data-toggle="modal">Enter Word</a>
+</div>
+
+<!-- Modal HTML -->
+<div id="myModal" class="modal fade">
+	<div class="modal-dialog modal-login">
+		<div class="modal-content">
+			<div class="modal-header">				
+				<h4 class="modal-title">Enter Your Word</h4>
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			</div>
+			<div class="modal-body">
+			
+					<div class="form-group">
+						<input type="text" class="form-control" id="newword" placeholder="Word" required="required">
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" id="newscore" placeholder="Score" required="required">
+					</div>
+					<div class="form-group">
+						<input type="submit" id="submit" class="btn btn-primary btn-block btn-lg"
+						 value="Saved!">
+					</div>
+					
+				
+			</div>
+		</div>
+	</div>
+</div> 
+	
+		<div class="table-title">
+			<h3>My Table</h3>
+		</div>
+
+		<table class="table-fill">
+			<thead>
+			  <tr>
+				<th class="text-left">Name</th>
+				<th class="text-left">Score</th>
+			  </tr>
+			</thead>
+			<tbody class="table-hover">
+			
+			  <% var keys = Object.keys(data) %>
+			  <% for(var i=0; i<= keys.length; i++) { %>
+			 	<% var word = keys[i], score = data[word]; %>
+				<tr>
+			    <td class="text-left"><%= word %>
+			    </td>
+				<td class="text-left"><%= score %>
+				</td>
+			  </tr>
+			  <% } %>
+			</tbody>
+		</table>
+		
+	</body>
+	<script type="text/javascript" src="/myjs.js"></script>
+
+</html>
+
